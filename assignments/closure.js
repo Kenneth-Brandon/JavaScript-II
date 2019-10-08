@@ -44,30 +44,21 @@ console.log(newCounter());
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
 
-const counterMaker = limit => {
+const counterMaker = () => {
   let count = 0;
-  return function counter() {
-    if (count < limit) {
-      return (count += 1);
-    } else {
-      count = 0;
-      return counter();
-    }
+  let limit = 7;
+
+while(count < limit) {
+  console.log(count);
+  count++;
   }
-}
-  
-  const newCounterMaker = counter();
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
-  console.log(newCounterMaker());
+
+let newCount = count;
+  return newCount;
+};
+
+  console.log(counterMaker());
+
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 // const counterFactory = () => {
